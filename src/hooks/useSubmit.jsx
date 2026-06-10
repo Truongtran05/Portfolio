@@ -27,6 +27,7 @@ const useSubmit = () => {
         message: `Thanks for your submission ${data.firstName}, we will get back to you shortly!`,
       });
     } catch (error) {
+      console.error("Error submitting form:", error);
       setResponse({
         type: 'error',
         message: 'Something went wrong, please try again later!',
