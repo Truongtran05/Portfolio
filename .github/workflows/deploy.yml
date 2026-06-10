@@ -1,29 +1,37 @@
-name: Deploy Portfolio Website to gitHub Pages
+name: Deploy Portfolio Website to GitHub Pages
 
 on:
   workflow_dispatch:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    #checkout the code
+      # Checkout the code
       - name: Checkout code
-        uses: actions/checkout@v6
-    #set up Node.js
+        uses: actions/checkout@v4
+
+      # Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-    #install dependencies
+          node-version: '20'
+
+      # Install dependencies
       - name: Install dependencies
         run: npm install
-    #build the project
+
+      # Build the project
       - name: Build project
         run: npm run build
-    #deploy to GitHub Pages
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
