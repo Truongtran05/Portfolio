@@ -1,6 +1,7 @@
 name: Deploy Portfolio Website to gitHub Pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
