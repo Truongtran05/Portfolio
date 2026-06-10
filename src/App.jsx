@@ -11,7 +11,7 @@ import AppTheme from "./themes/AppTheme";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename= '/Portfolio/'>
       <ChakraProvider theme={AppTheme}>
         <AlertProvider>
           <Box as="main" pt="60px" position="relative" minH="100vh" overflow="hidden">
